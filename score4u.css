@@ -1,0 +1,73 @@
+@import url("geomanist/font/stylesheet.css");
+
+* {
+    font-family: "geomanist";
+}
+
+body {
+    background-color: rgb(3, 25, 37);
+}
+
+.banner {
+    background-color:rgb(4, 36, 54);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+.logo {
+    width: 17%;
+    padding-right: 150px;
+}
+.przycisk {
+    background-color: rgb(200, 0, 55);
+    width: 250px;
+    color: RGB(9, 46, 52);
+    font-weight: 500;
+    font-size: 20px;
+    border: solid 5px  rgb(1, 10, 15);
+    border-radius: 5px;
+    margin: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.przycisk:hover {
+    background-color: rgb(0, 30, 40);
+    color: white;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
+.fav {
+    background-color:rgb(4, 36, 54);
+    float:left;
+    width:17%;
+    height:100%;
+    position: absolute;
+    color:azure;
+    text-align: center;
+}
+
+.info {
+    position: relative;
+    float: left;
+    margin-left: 18%;
+    color:azure;
+    width: 62%;
+}
+.line {
+    border: 0;
+    height: 40px;
+    background:rgb(4, 36, 54);
+    margin: 40px 0;
+    width: 100%;
+}
+.hot {
+    position: relative;
+    margin-left: 18%;
+    color: azure;
+    width: 62%;
+}
+
+
