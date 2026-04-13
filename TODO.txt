@@ -1,9 +1,4 @@
 
 do zrobienia 
 
-- tabela trending
-- ulubieni zawodnicy/druzyny
-- wyszukiwarka druzyn i zawodnikuw
-- tabele z wynikami
-- wgl api ogarnąć ahahahaah
-- nauczyć gemini żeby zrobilo wszystko za nas >:D
+- api trzeba ogarnac bo mi nie dzialalo jak robilem jakies rapid api

@@ -1,73 +1,198 @@
-@import url("geomanist/font/stylesheet.css");
-
+/* GLOBAL SETTINGS */
 * {
-    font-family: "geomanist";
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
     background-color: rgb(3, 25, 37);
+    color: azure;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+/* TOP BANNER */
 .banner {
-    background-color:rgb(4, 36, 54);
+    background-color: rgb(4, 36, 54);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 15px;
+    padding: 15px 20px;
+    border-bottom: 3px solid rgb(200, 0, 55);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    height: 50px;
+}
+
+.search-box {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: left;
+    justify-content: center;
 }
-.logo {
-    width: 17%;
-    padding-right: 150px;
+
+.search-box input {
+    border: 2px solid rgb(1, 10, 15);
+    background-color: azure;
+    padding: 10px 20px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 15px;
+    border-radius: 20px;
+    outline: none;
 }
-.przycisk {
+
+/* SIDEBAR NAVIGATION */
+.sidebar {
+    background-color: rgb(4, 36, 54);
+    padding: 25px;
+    border-bottom: 3px solid rgb(200, 0, 55);
+}
+
+.sidebar-group {
+    margin-bottom: 20px;
+}
+
+.favtext {
+    font-size: 16px;
+    color: rgb(200, 0, 55);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.sidebar-label {
+    font-weight: bold;
+    color: #88a0b0;
+    margin-bottom: 10px;
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.sidebar-list {
+    list-style: none;
+}
+
+.sidebar-list li a {
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: azure;
+    text-decoration: none;
+}
+
+.sidebar-list li a:hover {
     background-color: rgb(200, 0, 55);
-    width: 250px;
-    color: RGB(9, 46, 52);
-    font-weight: 500;
-    font-size: 20px;
-    border: solid 5px  rgb(1, 10, 15);
-    border-radius: 5px;
-    margin: 15px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.przycisk:hover {
-    background-color: rgb(0, 30, 40);
     color: white;
-    border-radius: 5px;
-    cursor:pointer;
 }
 
-.fav {
-    background-color:rgb(4, 36, 54);
-    float:left;
-    width:17%;
-    height:100%;
-    position: absolute;
-    color:azure;
-    text-align: center;
-}
-
-.info {
-    position: relative;
-    float: left;
-    margin-left: 18%;
-    color:azure;
-    width: 62%;
-}
 .line {
     border: 0;
-    height: 40px;
-    background:rgb(4, 36, 54);
-    margin: 40px 0;
-    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 25px 0;
 }
-.hot {
-    position: relative;
-    margin-left: 18%;
+
+/* CONTENT AREA */
+.content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.red-box {
+    border: 2px solid rgb(200, 0, 55);
+    padding: 15px;
+    margin-top: 20px;
+    min-height: 300px;
+    background-color: rgb(4, 36, 54);
+    border-radius: 8px;
+}
+
+.table-row {
+    display: block;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 17px;
     color: azure;
-    width: 62%;
+    text-decoration: none;
 }
 
+.table-row:hover {
+    background-color: rgb(200, 0, 55);
+    color: white;
+}
 
+/* HEADERS & PHOTO */
+.header-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.big-placeholder {
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: rgb(3, 25, 37);
+}
+
+.big-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player-stats p {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.player-stats strong {
+    display: inline-block;
+    width: 130px;
+    color: rgb(200, 0, 55);
+}
+
+/* DESKTOP RWD */
+@media (min-width: 768px) {
+    body {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        grid-template-rows: 80px 1fr;
+        grid-template-areas: "header header" "sidebar main";
+    }
+    .banner {
+        grid-area: header;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 50px;
+    }
+    .search-box { width: auto; }
+    .sidebar {
+        grid-area: sidebar;
+        border-bottom: none;
+        border-right: 3px solid rgb(200, 0, 55);
+        height: calc(100vh - 80px);
+        position: sticky;
+        top: 80px;
+    }
+    .content { grid-area: main; padding: 40px; }
+    .header-info { flex-direction: row; text-align: left; gap: 30px; }
+    .big-placeholder { width: 150px; height: 150px; }
+}
