@@ -2,3 +2,8 @@
 do zrobienia 
 
 - api trzeba ogarnac bo mi nie dzialalo jak robilem jakies rapid api
+
+- na kolejne zajecia. zmienic liste z html na js
+-readme.md zrobic
+-zamykany trending
+-zrobic placeholdery zeby bylo po 30 pozycji w pilkarzach i 20 druzyn w tabeli
